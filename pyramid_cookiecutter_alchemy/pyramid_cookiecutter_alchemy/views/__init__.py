@@ -1,14 +1,10 @@
-from .default import (
-    list_view,
-    detail_view,
-    create_view,
-    update_view
-)
+# from .default import JournalViews
 
 
 def includeme(config):
     """."""
-    config.add_view(list_view, route_name='home')
-    config.add_view(detail_view, route_name='detail-view')
-    config.add_view(create_view, route_name='new-entry')
-    config.add_view(update_view, route_name='edit-entry')
+    pass
+#     config.add_view(JournalViews.list_view, route_name='home')
+#     config.add_view(JournalViews.detail_view, route_name='detail')
+#     config.add_view(JournalViews.create_view, route_name='create')
+#     config.add_view(JournalViews.update_view, route_name='update')
