@@ -15,7 +15,8 @@ from ..models import (
     get_session_factory,
     get_tm_session,
     )
-from ..models import MyModel
+from ..models import Entries
+from ...data.journals import Journals
 
 
 def usage(argv):
@@ -32,6 +33,7 @@ def main(argv=sys.argv):
     options = parse_vars(argv[2:])
     setup_logging(config_uri)
     settings = get_appsettings(config_uri, options=options)
+    settings['sqlalchemy'] = os.environ.get('DATABASE_URL', '')
 
     engine = get_engine(settings)
     Base.metadata.create_all(engine)
@@ -41,5 +43,13 @@ def main(argv=sys.argv):
     with transaction.manager:
         dbsession = get_tm_session(session_factory, transaction.manager)
 
-        model = MyModel(name='one', value=1)
-        dbsession.add(model)
+        journal_entries = []
+        for journal in Journals:
+            journal_entries.append(
+                    Entries(
+                        title=journal['title'],
+                        body=journal['text'],
+                        created=journal['created']
+                    )
+                )
+        dbsession.add(journal_entries)

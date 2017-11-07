@@ -8,11 +8,10 @@ from sqlalchemy import (
 from .meta import Base
 
 
-class MyModel(Base):
-    __tablename__ = 'models'
+class Entries(Base):
+    __tablename__ = 'Journals'
     id = Column(Integer, primary_key=True)
-    name = Column(Text)
-    value = Column(Integer)
+    title = Column(Text)
+    body = Column(Text)
+    created = Column(Text)
 
-
-Index('my_index', MyModel.name, unique=True, mysql_length=255)
