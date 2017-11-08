@@ -16,7 +16,7 @@ from ..models import (
     get_tm_session,
     )
 from ..models import Entries
-from ...data.journals import Journals
+from ..data.journals import Journals
 
 
 def usage(argv):
@@ -52,4 +52,4 @@ def main(argv=sys.argv):
                         created=journal['created']
                     )
                 )
-        dbsession.add(journal_entries)
+        dbsession.add_all(journal_entries)

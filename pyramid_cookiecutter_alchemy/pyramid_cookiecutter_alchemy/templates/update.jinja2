@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Update Entry</title>
-</head>
-<body>
-    <h2>Update Entry
-    </h2>
-    <form>
-        <table>
-            <tr>
-                <td>
-                    <input type="text" name="title" placeholder="Journal Title Here">
-                </td>
-                <td>
-                    <textarea name="content" placeholder="Content text here."></textarea>
-                </td>
-                    <button>Create Entry.</button>
-            </tr>
-        </table>
-    </form>
-</body>
-</html>
+{% extends 'layout.jinja2' %}
+{% block content %}
+<h2>Create entry.
+</h2>
+<form>
+    <table>
+        <tr>
+            <td>
+                <input type="text" name="title" placeholder="Journal Title Here">
+            </td>
+            <td>
+                <textarea name="content" placeholder="Content text here."></textarea>
+            </td>
+            <button>Create Entry.</button>
+        </tr>
+    </table>
+</form>
+{% endblock %}

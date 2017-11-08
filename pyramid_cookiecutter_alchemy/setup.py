@@ -19,6 +19,7 @@ requires = [
     'transaction',
     'zope.sqlalchemy',
     'waitress',
+    'psycopg2'
 ]
 
 tests_require = [
@@ -55,7 +56,7 @@ setup(
             'main = pyramid_cookiecutter_alchemy:main',
         ],
         'console_scripts': [
-            'initialize_pyramid_cookiecutter_alchemy_db = pyramid_cookiecutter_alchemy.scripts.initializedb:main',
+            'initializedb = pyramid_cookiecutter_alchemy.scripts.initializedb:main',
         ],
     },
 )

@@ -2,7 +2,7 @@
 
 from pyramid.view import view_config
 from pyramid.view import view_defaults
-from pyramid.
+import request
 
 
 @view_defaults(renderer='layout.jinja2')
