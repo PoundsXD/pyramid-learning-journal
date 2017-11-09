@@ -1,0 +1,7 @@
+{% extends 'layout.jinja2' %}
+{% block content %}
+<h2>{{ Journal.title }}</h2>
+<p>{{ Journal.creation_date }}</p>
+<p>{{ Journal.body }}</p>
+<a href="journal/{{ Journal.id }}/edit-entry">Edit entry</a>
+{% endblock %}
